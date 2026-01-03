@@ -2,11 +2,11 @@ html {
     scroll-behavior: smooth;
 }
 .header {
-    background-color: #18181F;
+    background-color: #101017;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(27, 25, 25, 0.05);
 }
 .header-div {
     display: flex;
@@ -21,7 +21,7 @@ html {
 }
 .button {
     background-color: #6A47F2;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 10px 16px;
 }
 
@@ -39,10 +39,165 @@ a {
 }
 
 .button:hover {
-    background-color: #5132c2; /* A slightly darker purple */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background-color: #5132c2;
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
 }
 
 .button:hover a {
     color: #FFFFFF;
+}
+
+.main {
+    background-color: #060a13;
+}
+
+h1 {
+    color: #FFFFFF;
+    font-size: 78.3px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 90px;
+}
+
+.p1 {
+    color: #CFCDD6;
+    font-size: 19.8px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 200px;
+    padding-left: 200px;
+}
+.section1-txt{
+    text-align: center;
+    padding-top: 146px;
+    padding-right: 300px;
+    padding-bottom: 63px;
+    padding-left: 300px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 18px;
+}
+.section1-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.two_buttons{
+    position: absolute;
+    top: 20%;
+    z-index: 10;
+    display: flex;
+    gap: 15px;
+}
+.btn1 {
+    color: white;
+    background-color: #6A47F2;
+    border-radius: 20px;
+    border: 2px solid  #5132c2;
+}
+.btn2 {
+    color: white;
+    background-color: #090F1D;
+    border-radius: 20px;
+    border: 2px solid #5132c2;
+}
+
+.btn1,.btn2 {
+    padding: 15px 24px; 
+    font-family: "Inter", sans-serif;
+    font-weight: 600; 
+    cursor: pointer; 
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+.btn1:hover {
+    background-color: #5132c2; 
+    transform: translateY(-2px); 
+}
+.btn2:hover {
+    background-color: #18181F; 
+    transform: translateY(-2px); 
+}
+.agents-txt {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 10%; 
+    gap: 20px;
+}
+.agents-txt img {
+    background-color: white;
+    width: 120px;
+    padding: 10px;
+    border-radius: 10px;
+    
+}
+.agents-txt h2{
+    color:white;
+    font-size: 49.3px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 1.1;
+}
+.agent-blocks{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 50px;
+    padding-bottom: 64px;
+}
+.block h2 {
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: bold;
+    font-size: 29.9px;
+    margin-bottom: 12px;
+}
+.block img {
+    margin-bottom: 28px;
+    padding: 60px 200px 20px 20px;
+}
+.block p ,a{
+    color: #CFCDD6;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.block {
+    text-align: left;
+    padding-right: 40px;
+    padding-left: 40px;
+    padding-bottom: 40px;
+    background: linear-gradient(135deg, #0b0b0f 0%, #1a113a 100%);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    flex: 1; 
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+}
+
+.block:hover {
+    /* Shifts the gradient and makes the purple more vivid */
+    background: linear-gradient(135deg, #111116 0%, #2b1c63 100%);
+    transform: translateY(-5px);
+    border-color: rgba(106, 71, 242, 0.5);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
