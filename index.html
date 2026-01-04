@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -18,7 +19,7 @@
                 <ul class="ul1">
                     <li><a href="#agents">AI Agents</a></li>
                     <li><a href="#industry">Industry</a></li>
-                    <li><a href="#company">Company</a></li>
+                    <li><a href="#product">Product</a></li>
                     <li><a href="#blogs">Blogs</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                 </ul>
@@ -47,12 +48,12 @@
                 </div>
                 <img src="pics/Image [w-[818px]].png" alt="picture">
             </div>
+        </section>  
+        <section id="agents" class="hero-section">  
             <div class="agents-txt">
                 <img src="pics/AI Agent Types.svg" alt="">
                 <h2>Discover the Perfect AI Agent <br> for Your Needs</h2>
-            </div>
-        </section>  
-        <section id="agents" class="hero-section">   
+            </div> 
             <div class="agent-blocks">
                 <div class="block">
                     <img src="pics/Image [md_w-[120px]].svg" alt="picture">
@@ -75,9 +76,36 @@
             </div>
             </section> 
         <section id="industry" class="industry-section">
-            </section>
+            <div class="industries-txt">
+                <img src="pics/Div [pills].svg" alt="">
+                <h2>Transforming Lead Generation <br> Across Industries</h2>
+            </div>
+            <div class="slider-main-container">
+                <button class="nav-arrow left-arrow" id="prevBtn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
 
-        <section id="company" class="about-section">
+                <div class="swiper-container">
+                    <div class="dots-container" id="dots-container">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <div class="swiper-wrapper" id="image-track">
+                        <img src="pics/Image.png" alt="picture" class="swiper-img">
+                        <img src="pics/Image (1).png" alt="picture" class="swiper-img">
+                        <img src="pics/Image (2).png" alt="picture" class="swiper-img">
+                    </div>
+                </div>
+
+                <button class="nav-arrow right-arrow" id="nextBtn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+        </section>
+
+        <section id="product" class="product-section">
         </section>
 
         <section id="blogs" class="blog-section">

@@ -133,6 +133,9 @@ h1 {
     align-items: center;
     padding: 120px 10%; 
     gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
 }
 .agents-txt img {
     background-color: white;
@@ -156,6 +159,7 @@ h1 {
     gap: 20px;
     padding: 0 50px;
     padding-bottom: 64px;
+    margin-top: 64px;
 }
 .block h2 {
     color: white;
@@ -195,9 +199,107 @@ h1 {
 }
 
 .block:hover {
-    /* Shifts the gradient and makes the purple more vivid */
     background: linear-gradient(135deg, #111116 0%, #2b1c63 100%);
     transform: translateY(-5px);
     border-color: rgba(106, 71, 242, 0.5);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.industries-txt {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 120px 10%; 
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1); 
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+}
+.industries-txt img {
+    background-color: white;
+    width: 120px;
+    border-radius: 20px;
+    
+}
+.industries-txt h2{
+    color:white;
+    font-size: 49.3px;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: bold;
+    line-height: 1.1;
+}
+.slider-main-container {
+    position: relative;
+    width: fit-content;
+    margin: 0 auto; 
+    display: flex;
+    align-items: center;
+    padding-top: 56px;
+    padding-bottom: 56px;
+}
+.nav-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+}
+.nav-arrow:hover {
+    background: #6A47F2;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.left-arrow { left: -70px; }
+.right-arrow { right: -70px; }
+
+.swiper-container {
+    width: 963px; 
+    margin: 0 auto; 
+    overflow: hidden; 
+    border-radius: 20px;
+    
+}
+.swiper-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+    cursor: pointer;
+    
+}
+
+.swiper-img {
+    width: 963px; 
+    flex-shrink: 0; 
+    object-fit: contain;
+    height: 550px;
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    width: 24px; 
+    background-color: #6A47F2;
+    border-radius: 10px;
 }
