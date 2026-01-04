@@ -303,3 +303,75 @@ h1 {
     background-color: #6A47F2;
     border-radius: 10px;
 }
+
+.product-block h2{
+    color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: bold;
+    font-size: 29.9px;
+    margin-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #6A47F2; 
+    display: inline-block;
+}
+
+
+h3 {
+   color: white;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    line-height: 32px;
+    font-size: 24px;
+}
+p {
+    color: #b7b9bc;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 17px;
+}
+.h3-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+.h3-block img {
+    width: 22px;
+    height: 22px;
+}
+.product-wrapper{
+    display: flex;
+    justify-content: center;
+    max-width: 1100px;
+    margin: 60px auto;
+    /* This creates the subtle outer border seen in Figma */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.02);
+}
+
+.product-block {
+    padding: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    min-height: 180px;
+}
+
+.product-blocks {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+.product-blocks:first-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(180deg, rgba(106, 71, 242, 0.05) 0%, transparent 100%);
+}
+.product-block:last-child {
+    border-bottom: none;
+}
