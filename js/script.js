@@ -136,3 +136,96 @@ function acceptCookies() {
 function closeCookieModal() {
     document.getElementById('cookieModal').style.display = 'none';
 }
+//////////////////////////
+let formEl = document.getElementById("registration");
+
+formEl.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    let errors = {};
+
+    let username = document.getElementById("usernamefield").value;
+    if (username === "") {
+        errors.username = "Username field cannot be empty";
+    }
+
+    let emailInputValue = document.getElementById("email").value;
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!emailInputValue.match(emailPattern)) {
+        errors.email = "Please enter a valid email";
+    }
+
+    let password = document.getElementById("passwordfield").value;
+    let password2 = document.getElementById("passwordfield2").value;
+
+    if (password === "") {
+        errors.password = "Password field cannot be empty";
+    }
+    if (password !== password2) {
+        errors.password2 = "Passwords do not match";
+    }
+
+    let agree = document.getElementById("check").checked;
+    if (!agree) {
+        errors.agree = "You must agree to our terms and conditions";
+    }
+
+    this.querySelectorAll(".error-text").forEach((element) => {
+        element.textContent = "";
+        element.style.color = "red";
+    });
+
+    for (let key in errors) {
+        let pError = document.getElementById("error-" + key);
+        if (key === "email") pError = document.getElementById("email-error");
+
+        if (pError) {
+            pError.textContent = errors[key];
+        }
+    }
+
+    if (Object.keys(errors).length === 0) {
+        alert("Success! Form is ready to submit.");
+    }
+});
+
+let emailInput = document.getElementById("email");
+emailInput.addEventListener("keyup", function() {
+    let emailInputValue = this.value;
+    let PError = document.getElementById("email-error");
+    let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+    if (emailInputValue.match(emailPattern)) {
+        PError.textContent = "Your Email is Valid";
+        PError.style.color = "green";
+    } else {
+        PError.textContent = "Your Email is Invalid";
+        PError.style.color = "red";
+    }
+
+    if (emailInputValue === "") {
+        PError.textContent = "";
+    }
+});
+
+let passw = document.getElementById("passwordfield");
+let icon = document.getElementById("icon");
+
+icon.addEventListener("click", function () {
+    if (passw.type === "password") {
+        passw.setAttribute("type", "text");
+        this.classList.remove("fa-eye");
+        this.classList.add("fa-eye-slash");
+    } else {
+        passw.setAttribute("type", "password");
+        this.classList.remove("fa-eye-slash");
+        this.classList.add("fa-eye");
+    }
+});
+
+function openAuthModal() {
+    document.getElementById('authModal').style.display = 'flex';
+}
+function closeAuthModal() {
+    document.getElementById('authModal').style.display = 'none';
+}

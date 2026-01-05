@@ -28,12 +28,10 @@
 
             <nav class="nav2">
                 <ul class="ul2">
-                    <li><a href="#contact">Login</a></li>
-                    <li><a href="#contact">Sign Up</a></li>
+                    <li><a href="javascript:void(0)" onclick="openAuthModal()">Login</a></li>
                     <li class="button"><a href="#pricing">Book a Demo</a></li>
                 </ul>
             </nav>
-
         </div>
     </header>
     <main class="main">
@@ -324,6 +322,45 @@
             </div>
         </div>
     </div>
+    <div id="authModal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeAuthModal()">&times;</span>
+        
+        <form id="registration">
+            <h2>Authentication</h2>
+
+            <div class="input-group">
+                <input type="text" id="usernamefield" placeholder="Username">
+                <p class="error-text" id="error-username"></p>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="email" placeholder="Email Address">
+                <p class="error-text" id="email-error"></p>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="passwordfield" placeholder="Password">
+                <i class="fa-solid fa-eye" id="icon" style="cursor:pointer"></i>
+                <p class="error-text" id="error-password"></p>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="passwordfield2" placeholder="Repeat Password">
+                <p class="error-text" id="error-password2"></p>
+            </div>
+
+            <div class="input-group">
+                <label>
+                    <input type="checkbox" id="check"> I agree to terms
+                </label>
+                <p class="error-text" id="error-agree"></p>
+            </div>
+
+            <button type="submit" class="auth-submit">Continue</button>
+        </form>
+    </div>
+</div>
 
     <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <script src="js/script.js"></script>
