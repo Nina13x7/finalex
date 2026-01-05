@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
     <header class="header">
@@ -29,7 +30,7 @@
                 <ul class="ul2">
                     <li><a href="#contact">Login</a></li>
                     <li><a href="#contact">Sign Up</a></li>
-                    <li class="button"><a href="#contact">Book a Demo</a></li>
+                    <li class="button"><a href="#pricing">Book a Demo</a></li>
                 </ul>
             </nav>
 
@@ -51,7 +52,7 @@
         </section>  
         <section id="agents" class="hero-section">  
             <div class="agents-txt">
-                <img src="pics/AI Agent Types.svg" alt="">
+                <img src="pics//Div [pills] (3).svg" alt="">
                 <h2>Discover the Perfect AI Agent <br> for Your Needs</h2>
             </div> 
             <div class="agent-blocks">
@@ -178,9 +179,62 @@
         </section>
 
         <section id="blogs" class="blog-section">
-            </section>
-
+            <div class="industries-txt">
+                <h2>Latest AI Insights</h2>
+            </div>
+            <div id="blog-container" class="blog-grid"></div>
+        </section>
         <section id="pricing" class="pricing-section">
+            <div class="industries-txt">
+                <h2>Ready to scale your business?</h2>
+                <p>Choose the perfect plan for your AI journey.</p>
+            </div>
+
+            <div class="pricing-wrapper">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name">Starter</span>
+                        <div class="price">Free</div>
+                        <p>Perfect for exploring AI capabilities.</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> 100 AI Conversations</li>
+                        <li><i class="fa-solid fa-check"></i> 1 Active Agent</li>
+                        <li><i class="fa-solid fa-check"></i> Basic Analytics</li>
+                    </ul>
+                    <button class="btn2">Get Started</button>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="popular-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <span class="plan-name">Professional</span>
+                        <div class="price">$49<span>/mo</span></div>
+                        <p>Best for growing businesses.</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Unlimited Conversations</li>
+                        <li><i class="fa-solid fa-check"></i> 5 Active Agents</li>
+                        <li><i class="fa-solid fa-check"></i> Advanced SOP Training</li>
+                        <li><i class="fa-solid fa-check"></i> Priority Support</li>
+                    </ul>
+                    <button class="btn1">Start Free Trial</button>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <span class="plan-name">Enterprise</span>
+                        <div class="price">Custom</div>
+                        <p>Tailored for large-scale operations.</p>
+                    </div>
+                    <ul class="features">
+                        <li><i class="fa-solid fa-check"></i> Custom API Integrations</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated Manager</li>
+                        <li><i class="fa-solid fa-check"></i> 180+ Languages</li>
+                    </ul>
+                    <button class="btn2">Contact Sales</button>
+                </div>
+            </div>
         </section>    
 
         <section id="contact" class="contact-section">
@@ -189,6 +243,7 @@
     <footer>
 
     </footer>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.13.2/dist/axios.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>

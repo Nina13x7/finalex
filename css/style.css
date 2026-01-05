@@ -57,9 +57,11 @@ h1 {
     font-size: 78.3px;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 700;
     font-style: normal;
     line-height: 90px;
+    letter-spacing: -0.04em;
+    margin-bottom: 10px;
 }
 
 .p1 {
@@ -69,18 +71,19 @@ h1 {
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    padding-right: 200px;
-    padding-left: 200px;
+    padding-right: 140px;
+    padding-left: 140px;
 }
 .section1-txt{
     text-align: center;
-    padding-top: 146px;
+    padding-top: 63px;
     padding-right: 300px;
     padding-bottom: 63px;
     padding-left: 300px;
     display: flex;
     flex-direction: column;
     row-gap: 18px;
+    background: radial-gradient(circle at top center, #1a113a 0%, #060a13 100%);
 }
 .section1-buttons {
     display: flex;
@@ -98,9 +101,10 @@ h1 {
 }
 .btn1 {
     color: white;
-    background-color: #6A47F2;
     border-radius: 20px;
     border: 2px solid  #5132c2;
+    background: linear-gradient(90deg, #6A47F2, #8b5cf6);
+    box-shadow: 0 0 20px rgba(106, 71, 242, 0.4);
 }
 .btn2 {
     color: white;
@@ -119,7 +123,8 @@ h1 {
 }
 .btn1:hover {
     background-color: #5132c2; 
-    transform: translateY(-2px); 
+    transform: translateY(-2px);  
+    filter: brightness(1.2);  
 }
 .btn2:hover {
     background-color: #18181F; 
@@ -140,9 +145,7 @@ h1 {
 .agents-txt img {
     background-color: white;
     width: 120px;
-    padding: 10px;
-    border-radius: 10px;
-    
+    border-radius: 20px;
 }
 .agents-txt h2{
     color:white;
@@ -175,10 +178,11 @@ h1 {
     padding: 60px 200px 20px 20px;
 }
 .block p ,a{
-    color: #CFCDD6;
+    color:  #CFCDD6;;
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400;
+    font-weight: 300;
+    line-height: 1.6;
     font-style: normal;
     font-size: 16px;
     margin-bottom: 10px;
@@ -220,7 +224,6 @@ h1 {
     background-color: white;
     width: 120px;
     border-radius: 20px;
-    
 }
 .industries-txt h2{
     color:white;
@@ -326,6 +329,7 @@ h3 {
     font-style: normal;
     line-height: 32px;
     font-size: 24px;
+    letter-spacing: -0.03em;
 }
 p {
     color: #b7b9bc;
@@ -350,7 +354,6 @@ p {
     justify-content: center;
     max-width: 1100px;
     margin: 60px auto;
-    /* This creates the subtle outer border seen in Figma */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
     overflow: hidden;
@@ -371,7 +374,175 @@ p {
 .product-blocks:first-child {
     border-right: 1px solid rgba(255, 255, 255, 0.1);
     background: linear-gradient(180deg, rgba(106, 71, 242, 0.05) 0%, transparent 100%);
+    box-shadow: inset 20px 0 60px rgba(106, 71, 242, 0.1);
 }
 .product-block:last-child {
     border-bottom: none;
+}
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 60px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.blog-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 24px;
+    padding: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-card:hover {
+    transform: translateY(-12px);
+    background: rgba(106, 71, 242, 0.05); 
+    border-color: rgba(106, 71, 242, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 
+                0 0 20px rgba(106, 71, 242, 0.1);
+}
+
+.blog-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    filter: grayscale(20%);
+    transition: 0.3s ease;
+}
+
+.blog-card:hover .blog-img {
+    filter: grayscale(0%); 
+}
+
+.blog-tag {
+    color: #6A47F2;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.blog-content h3 {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.blog-content p {
+    color: #B7B9BC;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+.blog-link {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    transition: gap 0.3s ease;
+}
+
+.blog-link:hover {
+    color: #6A47F2;
+    gap: 12px; 
+}
+
+.pricing-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    padding: 60px 10%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-card {
+    flex: 1;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.pricing-card.featured {
+    background: rgba(106, 71, 242, 0.05);
+    border: 1.5px solid #6A47F2;
+    transform: scale(1.05); 
+    box-shadow: 0 20px 60px rgba(106, 71, 242, 0.15);
+}
+
+.popular-badge {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #6A47F2;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.plan-name {
+    color: #6A47F2;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.price {
+    font-size: 48px;
+    color: white;
+    font-weight: 800;
+    margin: 15px 0;
+}
+
+.price span {
+    font-size: 18px;
+    color: #B7B9BC;
+    font-weight: 400;
+}
+
+.features {
+    list-style: none;
+    margin: 30px 0;
+    flex-grow: 1;
+}
+
+.features li {
+    color: #CFCDD6;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.features li i {
+    color: #6A47F2;
+    font-size: 14px;
 }
