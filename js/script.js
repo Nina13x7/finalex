@@ -118,3 +118,21 @@ sr.reveal('.pricing-card', {
 sr.reveal('.blog-card', { 
     interval: 200 
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const cookiesAccepted = localStorage.getItem('cookies_accepted');
+    if (!cookiesAccepted) {
+        setTimeout(() => {
+            document.getElementById('cookieModal').style.display = 'block';
+        }, 2000);
+    }
+});
+
+function acceptCookies() {
+    localStorage.setItem('cookies_accepted', 'true'); 
+    document.getElementById('cookieModal').style.display = 'none';
+}
+
+function closeCookieModal() {
+    document.getElementById('cookieModal').style.display = 'none';
+}
