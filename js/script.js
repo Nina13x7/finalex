@@ -1,53 +1,87 @@
 document.addEventListener('DOMContentLoaded', () => {
     const track = document.getElementById('image-track');
+    const container = document.querySelector(".swiper-container");
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     const slides = document.querySelectorAll('.swiper-img');
     const dots = document.querySelectorAll('.dot');
 
     let currentIndex = 0;
-    const slideWidth = 963;
 
     function updateDots() {
         dots.forEach((dot, index) => {
-            if (index === currentIndex) {
-                dot.classList.add('active');
-            } else {
-                dot.classList.remove('active');
-            }
+            dot.classList.toggle('active', index === currentIndex);
         });
     }
 
     function moveSlider() {
-        track.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+        const containerWidth = container.offsetWidth;
+        track.style.transform = `translateX(-${currentIndex * containerWidth}px)`;
         updateDots();
     }
 
-    nextBtn.addEventListener('click', () => {
-        if (currentIndex < slides.length - 1) {
-            currentIndex++;
-        } else {
-            currentIndex = 0; 
-        }
+    track.addEventListener('click', () => {
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
         moveSlider();
     });
 
-    prevBtn.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-        } else {
-            currentIndex = slides.length - 1; 
-        }
+    nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
         moveSlider();
     });
-    
+
+    prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+        moveSlider();
+    });
+
     dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
+        dot.addEventListener('click', (e) => {
+            e.stopPropagation();
             currentIndex = index;
             moveSlider();
         });
     });
+
+    window.addEventListener("resize", () => {
+        track.style.transition = 'none';
+        moveSlider();
+        setTimeout(() => {
+            track.style.transition = 'transform 0.5s ease-in-out';
+        }, 50);
+    });
+
+    updateDots();
 });
+
+var burgerMenu = document.getElementById('burger-menu');
+var overlay = document.getElementById('menu');
+var menuLinks = document.querySelectorAll('#menu a'); 
+
+burgerMenu.addEventListener('click', function() {
+    toggleMenu();
+});
+
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (overlay.classList.contains('overlay')) {
+            toggleMenu();
+        }
+    });
+});
+
+function toggleMenu() {
+    burgerMenu.classList.toggle("close");
+    overlay.classList.toggle("overlay");
+    
+    if (burgerMenu.classList.contains("close")) {
+        document.body.style.overflow = "hidden";
+    } else {
+        document.body.style.overflow = "auto";
+    }
+}
 
 axios
   .get("https://jsonplaceholder.typicode.com/posts?_limit=6")
@@ -75,7 +109,7 @@ axios
     sr.reveal('.blog-card', { interval: 200 });
   })
   .catch(function (error) {
-    console.log("შეცდომა მოთხოვნისას:", error);
+    console.log("Error during request:", error);
   });
 
 
