@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
+    /////////////////////////////////
+    // IMAGE SLIDER
     const track = document.getElementById('image-track');
     const container = document.querySelector(".swiper-container");
-    const nextBtn = document.getElementById('nextBtn');
-    const prevBtn = document.getElementById('prevBtn');
+    // const nextBtn = document.getElementById('nextBtn');
+    // const prevBtn = document.getElementById('prevBtn');
     const slides = document.querySelectorAll('.swiper-img');
     const dots = document.querySelectorAll('.dot');
 
@@ -20,22 +22,31 @@ document.addEventListener('DOMContentLoaded', () => {
         updateDots();
     }
 
-    track.addEventListener('click', () => {
-        currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-        moveSlider();
-    });
+    track.addEventListener('click', (e) => {
+    const containerWidth = container.offsetWidth;
+    const clickX = e.clientX - container.getBoundingClientRect().left;
 
-    nextBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
+    if (clickX > containerWidth / 2) {
+        // Clicked on the RIGHT half 
         currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
-        moveSlider();
-    });
-
-    prevBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
+    } else {
+        // Clicked on the LEFT half 
         currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
-        moveSlider();
-    });
+    }
+    
+    moveSlider();
+});
+    // nextBtn.addEventListener('click', (e) => {
+    //     e.stopPropagation();
+    //     currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+    //     moveSlider();
+    // });
+
+    // prevBtn.addEventListener('click', (e) => {
+    //     e.stopPropagation();
+    //     currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+    //     moveSlider();
+    // });
 
     dots.forEach((dot, index) => {
         dot.addEventListener('click', (e) => {
@@ -55,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateDots();
 });
-
+/////////////////////////////
+// BURGER MENU TOGGLE
 var burgerMenu = document.getElementById('burger-menu');
 var overlay = document.getElementById('menu');
 var menuLinks = document.querySelectorAll('#menu a'); 
@@ -83,6 +95,8 @@ function toggleMenu() {
     }
 }
 
+/////////////////////////////
+// FETCH BLOG POSTS VIA AXIOS
 axios
   .get("https://jsonplaceholder.typicode.com/posts?_limit=6")
   .then(function (response) {
@@ -111,8 +125,9 @@ axios
   .catch(function (error) {
     console.log("Error during request:", error);
   });
-
-
+  
+/////////////////////////////
+// SCROLL REVEAL ANIMATIONS
 const sr = ScrollReveal({
     origin: 'bottom',
     distance: '60px',
@@ -152,7 +167,8 @@ sr.reveal('.pricing-card', {
 sr.reveal('.blog-card', { 
     interval: 200 
 });
-
+/////////////////////////////
+// COOKIE MODAL
 document.addEventListener("DOMContentLoaded", function() {
     const cookiesAccepted = localStorage.getItem('cookies_accepted');
     if (!cookiesAccepted) {
@@ -171,6 +187,7 @@ function closeCookieModal() {
     document.getElementById('cookieModal').style.display = 'none';
 }
 //////////////////////////
+// REGISTRATION FORM VALIDATION
 let formEl = document.getElementById("registration");
 
 formEl.addEventListener("submit", function (event) {
@@ -222,7 +239,8 @@ formEl.addEventListener("submit", function (event) {
         alert("Success! Form is ready to submit.");
     }
 });
-
+/////////////////////////////
+// LIVE EMAIL VALIDATION
 let emailInput = document.getElementById("email");
 emailInput.addEventListener("keyup", function() {
     let emailInputValue = this.value;
@@ -241,7 +259,8 @@ emailInput.addEventListener("keyup", function() {
         PError.textContent = "";
     }
 });
-
+/////////////////////////////
+// PASSWORD VISIBILITY TOGGLE
 let passw = document.getElementById("passwordfield");
 let icon = document.getElementById("icon");
 
@@ -256,7 +275,8 @@ icon.addEventListener("click", function () {
         this.classList.add("fa-eye");
     }
 });
-
+/////////////////////////////
+// AUTH MODAL
 function openAuthModal() {
     document.getElementById('authModal').style.display = 'flex';
 }
